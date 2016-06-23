@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>src\lib\Example.js</title>
+	<title>src\lib\Destructible.js</title>
 	<link rel="stylesheet" href="">
 	<link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
 
@@ -26,7 +26,7 @@
 		<form class="navbar-form navbar-right">
 			<div class="form-group">
 				<input type="text" class="form-control"  placeholder="Search for classes/modules..."
-				       data-obj='["classes/example.Example"]'>
+				       data-obj='["classes/temple.core.Destructible", "modules/Temple"]'>
 			</div>
 		</form>
 	</div>
@@ -49,11 +49,12 @@
 			
 				<div class="tab-content" style="border: 1px solid #DDD; border-top:0; padding-top: 10px; ">
 					<div class="tab-pane active" id="classes">
-			<ul class="list-unstyled"><li><strong name="undefined">example</strong><ul class="list-unstyled"><li>				- <a href="../classes/example.Example.html">Example</a>
-			</li></ul></li></ul>		</div>
+			<ul class="list-unstyled"><li><strong name="undefined">temple</strong><ul class="list-unstyled"><li><strong name="undefined">core</strong><ul class="list-unstyled"><li>				- <a href="../classes/temple.core.Destructible.html">Destructible</a>
+			</li></ul></li></ul></li></ul>		</div>
 			
 					<div class="tab-pane" id="modules">
 						<ul class="list-unordered">
+								<li><a href="../modules/Temple.html">Temple</a></li>
 						</ul>
 					</div>
 				</div>
@@ -86,38 +87,44 @@
 			<div class="apidocs">
 				<div id="docs-main">
 					<div class="content"><div class="page-header">
-    <h1>src\lib\Example.js <small>File</small></h1>
+    <h1>src\lib\Destructible.js <small>File</small></h1>
 </div>
 
 <div class="file">
 <pre class="prettyprint linenums">"use strict";
 /**
- * @namespace example
- * @class Example
- * @constructor
+ * @module Temple
+ * @namespace temple.core
+ * @class Destructible
  */
-var Example = (function () {
-    function Example() {
+var Destructible = (function () {
+    function Destructible() {
+        this._isDestructed = false;
     }
     /**
-     * Returns a value!
+     * After {{#crossLink "temple.core.Destructible/destruct"}}{{/crossLink}} has been called, this method returns true.
+     * Use this method to determine whether destruct() should be run again.
      *
-     * @method foo
-     * @param {string} str The input string
-     * @returns {string}
+     * @public
+     * @method isDestructed
+     * @returns {boolean}
      */
-    Example.prototype.foo = function (str) {
-        if (typeof str == 'undefined') {
-            return 'baz';
-        }
-        else {
-            return str + 'bar';
-        }
+    Destructible.prototype.isDestructed = function () {
+        return this._isDestructed;
     };
-    return Example;
+    /**
+     * Destruct this class.
+     *
+     * @public
+     * @method destruct
+     */
+    Destructible.prototype.destruct = function () {
+        this._isDestructed = true;
+    };
+    return Destructible;
 }());
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = Example;
+exports.default = Destructible;
 </pre>
 </div>
 </div>

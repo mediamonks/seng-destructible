@@ -1,2 +1,2 @@
-import { default as Example } from './lib/Example';
-export default Example;
+import { default as Destructible } from './lib/Destructible';
+export default Destructible;

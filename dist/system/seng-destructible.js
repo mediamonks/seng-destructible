@@ -1,59 +1,53 @@
-System.register("lib/Example", [], function(exports_1, context_1) {
+System.register("lib/IDestructible", [], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
-    var Example;
     return {
         setters:[],
         execute: function() {
-            /**
-             * @namespace example
-             * @class Example
-             * @constructor
-             */
-            Example = (function () {
-                function Example() {
-                }
-                /**
-                 * Returns a value!
-                 *
-                 * @method foo
-                 * @param {string} str The input string
-                 * @returns {string}
-                 */
-                Example.prototype.foo = function (str) {
-                    if (typeof str == 'undefined') {
-                        return 'baz';
-                    }
-                    else {
-                        return str + 'bar';
-                    }
-                };
-                return Example;
-            }());
-            exports_1("default", Example);
         }
     }
 });
-System.register("lib/IExample", [], function(exports_2, context_2) {
+System.register("lib/Destructible", [], function(exports_2, context_2) {
     "use strict";
     var __moduleName = context_2 && context_2.id;
+    var Destructible;
     return {
         setters:[],
         execute: function() {
+            Destructible = (function () {
+                function Destructible() {
+                    this._isDestructed = false;
+                }
+                /**
+                 * After {@link destruct} has been called, this method returns true.
+                 * Use this method to determine whether destruct() should be run again.
+                 */
+                Destructible.prototype.isDestructed = function () {
+                    return this._isDestructed;
+                };
+                /**
+                 * Destruct this class.
+                 */
+                Destructible.prototype.destruct = function () {
+                    this._isDestructed = true;
+                };
+                return Destructible;
+            }());
+            exports_2("default",Destructible);
         }
     }
 });
-System.register("index", ["lib/Example"], function(exports_3, context_3) {
+System.register("index", ["lib/Destructible"], function(exports_3, context_3) {
     "use strict";
     var __moduleName = context_3 && context_3.id;
-    var Example_1;
+    var Destructible_1;
     return {
         setters:[
-            function (Example_1_1) {
-                Example_1 = Example_1_1;
+            function (Destructible_1_1) {
+                Destructible_1 = Destructible_1_1;
             }],
         execute: function() {
-            exports_3("default",Example_1.default);
+            exports_3("default",Destructible_1.default);
         }
     }
 });

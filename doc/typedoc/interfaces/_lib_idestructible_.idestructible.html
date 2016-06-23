@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>IExample | seng-destructible</title>
+	<title>IDestructible | seng-destructible</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -57,34 +57,31 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_lib_iexample_.html">&quot;lib/IExample&quot;</a>
+					<a href="../modules/_lib_idestructible_.html">&quot;lib/IDestructible&quot;</a>
 				</li>
 				<li>
-					<a href="_lib_iexample_.iexample.html">IExample</a>
+					<a href="_lib_idestructible_.idestructible.html">IDestructible</a>
 				</li>
 			</ul>
-			<h1>Interface IExample</h1>
+			<h1>Interface IDestructible</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-comment">
-				<div class="tsd-comment tsd-typography">
-					<dl class="tsd-comment-tags">
-						<dt>interface</dt>
-						<dd><p>IExample</p>
-						</dd>
-					</dl>
-				</div>
-			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">IExample</span>
+						<span class="target">IDestructible</span>
 					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel">
+				<h3>Implemented by</h3>
+				<ul class="tsd-hierarchy">
+					<li><a href="../classes/_lib_destructible_.destructible.html" class="tsd-signature-type">Destructible</a></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -94,7 +91,8 @@
 						<section class="tsd-index-section tsd-is-external tsd-is-not-exported">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="_lib_iexample_.iexample.html#foo" class="tsd-kind-icon">foo</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="_lib_idestructible_.idestructible.html#destruct" class="tsd-kind-icon">destruct</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="_lib_idestructible_.idestructible.html#isdestructed" class="tsd-kind-icon">is<wbr>Destructed</a></li>
 							</ul>
 						</section>
 					</div>
@@ -103,38 +101,47 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-external tsd-is-not-exported">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
-					<a name="foo" class="tsd-anchor"></a>
-					<h3>foo</h3>
+					<a name="destruct" class="tsd-anchor"></a>
+					<h3>destruct</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">foo<span class="tsd-signature-symbol">(</span>str<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+						<li class="tsd-signature tsd-kind-icon">destruct<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in lib/IExample.ts:13</li>
+									<li>Defined in <a href="https://github.com/mediamonks/seng-destructible/blob/ebce01f/src/lib/IDestructible.ts#L12">lib/IDestructible.ts:12</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Returns a value!</p>
+									<p>Destruct this class.</p>
 								</div>
-								<dl class="tsd-comment-tags">
-									<dt>method</dt>
-									<dd><p>foo</p>
-									</dd>
-								</dl>
 							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> str: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The input string</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
+					<a name="isdestructed" class="tsd-anchor"></a>
+					<h3>is<wbr>Destructed</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Destructed<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/mediamonks/seng-destructible/blob/ebce01f/src/lib/IDestructible.ts#L7">lib/IDestructible.ts:7</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>After <a href="_lib_idestructible_.idestructible.html#destruct">destruct</a> has been called, this method returns true.
+									Use this method to determine whether destruct() should be run again.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -156,10 +163,10 @@
 						<span>Externals</span>
 					</li>
 					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="../modules/_lib_example_.html">"lib/<wbr>Example"</a>
+						<a href="../modules/_lib_destructible_.html">"lib/<wbr>Destructible"</a>
 					</li>
 					<li class="current tsd-kind-external-module tsd-is-external">
-						<a href="../modules/_lib_iexample_.html">"lib/IExample"</a>
+						<a href="../modules/_lib_idestructible_.html">"lib/IDestructible"</a>
 					</li>
 				</ul>
 			</nav>
@@ -168,10 +175,13 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
-						<a href="_lib_iexample_.iexample.html" class="tsd-kind-icon">IExample</a>
+						<a href="_lib_idestructible_.idestructible.html" class="tsd-kind-icon">IDestructible</a>
 						<ul>
 							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
-								<a href="_lib_iexample_.iexample.html#foo" class="tsd-kind-icon">foo</a>
+								<a href="_lib_idestructible_.idestructible.html#destruct" class="tsd-kind-icon">destruct</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
+								<a href="_lib_idestructible_.idestructible.html#isdestructed" class="tsd-kind-icon">is<wbr>Destructed</a>
 							</li>
 						</ul>
 					</li>

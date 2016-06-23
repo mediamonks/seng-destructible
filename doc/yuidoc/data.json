@@ -1,61 +1,87 @@
 {
     "project": {},
     "files": {
-        "src\\lib\\Example.js": {
-            "name": "src\\lib\\Example.js",
-            "modules": {},
+        "src\\lib\\Destructible.js": {
+            "name": "src\\lib\\Destructible.js",
+            "modules": {
+                "Temple": 1
+            },
             "classes": {
-                "example.Example": 1
+                "temple.core.Destructible": 1
             },
             "fors": {},
             "namespaces": {
-                "example": 1
+                "temple.core": 1
             }
         }
     },
-    "modules": {},
+    "modules": {
+        "Temple": {
+            "name": "Temple",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "temple.core.Destructible": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "temple.core": 1
+            },
+            "tag": "module",
+            "file": "src\\lib\\Destructible.js",
+            "line": 2
+        }
+    },
     "classes": {
-        "example.Example": {
-            "name": "example.Example",
-            "shortname": "example.Example",
+        "temple.core.Destructible": {
+            "name": "temple.core.Destructible",
+            "shortname": "temple.core.Destructible",
             "classitems": [],
             "plugins": [],
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "namespace": "example",
-            "file": "src\\lib\\Example.js",
-            "line": 2,
-            "is_constructor": 1
+            "module": "Temple",
+            "namespace": "temple.core",
+            "file": "src\\lib\\Destructible.js",
+            "line": 2
         }
     },
     "elements": {},
     "classitems": [
         {
-            "file": "src\\lib\\Example.js",
-            "line": 10,
-            "description": "Returns a value!",
+            "file": "src\\lib\\Destructible.js",
+            "line": 11,
+            "description": "After {{#crossLink \"temple.core.Destructible/destruct\"}}{{/crossLink}} has been called, this method returns true.\nUse this method to determine whether destruct() should be run again.",
+            "access": "public",
+            "tagname": "",
             "itemtype": "method",
-            "name": "foo",
-            "params": [
-                {
-                    "name": "str",
-                    "description": "The input string",
-                    "type": "String"
-                }
-            ],
+            "name": "isDestructed",
             "return": {
                 "description": "",
-                "type": "String"
+                "type": "Boolean"
             },
-            "class": "example.Example",
-            "namespace": "example"
+            "class": "temple.core.Destructible",
+            "module": "Temple",
+            "namespace": "temple.core"
+        },
+        {
+            "file": "src\\lib\\Destructible.js",
+            "line": 22,
+            "description": "Destruct this class.",
+            "access": "public",
+            "tagname": "",
+            "itemtype": "method",
+            "name": "destruct",
+            "class": "temple.core.Destructible",
+            "module": "Temple",
+            "namespace": "temple.core"
         }
     ],
     "warnings": [
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " src\\lib\\Example.js:10"
+            "line": " src\\lib\\Destructible.js:11"
         }
     ]
 }

@@ -1,5 +1,5 @@
-import {default as Example} from './lib/Example';
+import {default as Destructible} from './lib/Destructible';
 
-export {default as IExample} from './lib/IExample';
+export {default as IDestructible} from './lib/IDestructible';
 
-export default Example;
+export default Destructible;

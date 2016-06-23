@@ -1,10 +1,17 @@
 YUI.add("yuidoc-meta", function(Y) {
    Y.YUIDoc = { meta: {
     "classes": [
-        "example.Example"
+        "temple.core.Destructible"
     ],
-    "modules": [],
-    "allModules": [],
+    "modules": [
+        "Temple"
+    ],
+    "allModules": [
+        {
+            "displayName": "Temple",
+            "name": "Temple"
+        }
+    ],
     "elements": []
 } };
 });

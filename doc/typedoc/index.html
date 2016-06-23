@@ -71,7 +71,8 @@
 					<a href="https://www.npmjs.com/package/seng-destructible"><img src="https://badge.fury.io/js/seng-destructible.svg" alt="npm version"></a>
 				<a href="https://www.npmjs.com/package/seng-destructible"><img src="https://img.shields.io/npm/dm/seng-destructible.svg" alt="Downloads"></a></p>
 				<h1 id="seng-destructible">seng-destructible</h1>
-				<p>seng-destructible Description</p>
+				<p>seng-destructible provides a basic framework for destructible classes and objects. Destructible is used as a basis for
+				many Seng libraries because it provides a common interface which can be passed around to be destructed at a later time.</p>
 				<h2 id="installation">Installation</h2>
 				<pre><code>npm <span class="hljs-selector-tag">i</span> -S seng-destructible
 </code></pre><p>Or grab one of the following files from the <code>/dist/</code> folder for manual use:</p>
@@ -84,10 +85,35 @@
 					<li><strong>es6</strong></li>
 				</ul>
 				<h2 id="usage">Usage</h2>
-				<pre><code><span class="hljs-keyword">import</span> seng-destructible <span class="hljs-keyword">from</span> <span class="hljs-string">'seng-destructible'</span>;
-// <span class="hljs-keyword">import</span> seng-destructible <span class="hljs-keyword">from</span> <span class="hljs-string">'seng-destructible/lib/classname'</span>;
+				<pre><code><span class="hljs-keyword">import</span> <span class="hljs-type">Destructible</span> from <span class="hljs-symbol">'seng</span>-destructible';
 
-// <span class="hljs-keyword">do</span> something with seng-destructible
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AsyncThinger</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Destructible</span> </span>{
+    interval:number;
+
+    start() {
+        <span class="hljs-keyword">this</span>.interval = setInterval(() =&gt; console.log(<span class="hljs-symbol">'hello</span> world!'));
+    }
+
+    destruct() {
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.interval !== void <span class="hljs-number">0</span>) {
+            clearInterval(<span class="hljs-keyword">this</span>.interval);
+            <span class="hljs-keyword">this</span>.interval = void <span class="hljs-number">0</span>;
+        }
+
+        <span class="hljs-keyword">super</span>.destruct();
+    }
+}
+
+<span class="hljs-comment">// since all objects implementing IDestructible provide the same way to destruct it, we can simply create an array</span>
+<span class="hljs-comment">// that contains IDestructible objects, without having to care what they actually are.</span>
+let destructibles:<span class="hljs-type">Array</span>&lt;<span class="hljs-type">IDestructible</span>&gt; = [];
+
+destructibles.push(<span class="hljs-keyword">new</span> <span class="hljs-type">AsyncThinger</span>());
+destructibles.push(<span class="hljs-keyword">new</span> <span class="hljs-type">AsyncThinger</span>());
+destructibles.push(<span class="hljs-keyword">new</span> <span class="hljs-type">AsyncThinger</span>());
+destructibles.push(<span class="hljs-keyword">new</span> <span class="hljs-type">AsyncThinger</span>());
+
+destructibles.forEach(destructible =&gt; destructible.destruct());
 </code></pre><h2 id="documentation">Documentation</h2>
 				<p>View the <a href="https://rawgit.com/MediaMonks/seng-destructible/master/doc/typedoc/index.html">generated documentation</a>.</p>
 				<h2 id="building">Building</h2>
@@ -136,10 +162,10 @@
 						<span>Externals</span>
 					</li>
 					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/_lib_example_.html">"lib/<wbr>Example"</a>
+						<a href="modules/_lib_destructible_.html">"lib/<wbr>Destructible"</a>
 					</li>
 					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/_lib_iexample_.html">"lib/IExample"</a>
+						<a href="modules/_lib_idestructible_.html">"lib/IDestructible"</a>
 					</li>
 				</ul>
 			</nav>

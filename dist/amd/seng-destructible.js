@@ -52,9 +52,9 @@ define(function() { return /******/ (function(modules) { // webpackBootstrap
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Example_1 = __webpack_require__(2);
+	var Destructible_1 = __webpack_require__(2);
 	Object.defineProperty(exports, "__esModule", { value: true });
-	exports.default = Example_1.default;
+	exports.default = Destructible_1.default;
 
 
 /***/ },
@@ -62,33 +62,27 @@ define(function() { return /******/ (function(modules) { // webpackBootstrap
 /***/ function(module, exports) {
 
 	"use strict";
-	/**
-	 * @namespace example
-	 * @class Example
-	 * @constructor
-	 */
-	var Example = (function () {
-	    function Example() {
+	var Destructible = (function () {
+	    function Destructible() {
+	        this._isDestructed = false;
 	    }
 	    /**
-	     * Returns a value!
-	     *
-	     * @method foo
-	     * @param {string} str The input string
-	     * @returns {string}
+	     * After {@link destruct} has been called, this method returns true.
+	     * Use this method to determine whether destruct() should be run again.
 	     */
-	    Example.prototype.foo = function (str) {
-	        if (typeof str == 'undefined') {
-	            return 'baz';
-	        }
-	        else {
-	            return str + 'bar';
-	        }
+	    Destructible.prototype.isDestructed = function () {
+	        return this._isDestructed;
 	    };
-	    return Example;
+	    /**
+	     * Destruct this class.
+	     */
+	    Destructible.prototype.destruct = function () {
+	        this._isDestructed = true;
+	    };
+	    return Destructible;
 	}());
 	Object.defineProperty(exports, "__esModule", { value: true });
-	exports.default = Example;
+	exports.default = Destructible;
 
 
 /***/ }
