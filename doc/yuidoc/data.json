@@ -1,8 +1,8 @@
 {
     "project": {},
     "files": {
-        "src/lib/Example.js": {
-            "name": "src/lib/Example.js",
+        "src\\lib\\Example.js": {
+            "name": "src\\lib\\Example.js",
             "modules": {},
             "classes": {
                 "example.Example": 1
@@ -24,7 +24,7 @@
             "plugin_for": [],
             "extension_for": [],
             "namespace": "example",
-            "file": "src/lib/Example.js",
+            "file": "src\\lib\\Example.js",
             "line": 2,
             "is_constructor": 1
         }
@@ -32,7 +32,7 @@
     "elements": {},
     "classitems": [
         {
-            "file": "src/lib/Example.js",
+            "file": "src\\lib\\Example.js",
             "line": 10,
             "description": "Returns a value!",
             "itemtype": "method",
@@ -55,7 +55,7 @@
     "warnings": [
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " src/lib/Example.js:10"
+            "line": " src\\lib\\Example.js:10"
         }
     ]
 }
