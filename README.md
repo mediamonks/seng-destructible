@@ -6,7 +6,8 @@
 
 # seng-destructible
 
-seng-destructible Description
+seng-destructible provides a basic framework for destructible classes and objects. Destructible is used as a basis for
+many Seng libraries because it provides a common interface which can be passed around to be destructed at a later time.
 
 
 ## Installation
@@ -27,10 +28,36 @@ Or grab one of the following files from the `/dist/` folder for manual use:
 ## Usage
 
 ```
-import seng-destructible from 'seng-destructible';
-// import seng-destructible from 'seng-destructible/lib/classname';
+import Destructible from 'seng-destructible';
 
-// do something with seng-destructible
+class AsyncThinger extends Destructible {
+	interval:number;
+
+	start() {
+		this.interval = setInterval(() => console.log('hello world!'));
+	}
+	
+	destruct() {
+		if (this.interval !== void 0) {
+			clearInterval(this.interval);
+			this.interval = void 0;
+		}
+		
+		super.destruct();
+	}
+}
+
+// since all objects implementing IDestructible provide the same way to destruct it, we can simply create an array
+// that contains IDestructible objects, without having to care what they actually are.
+let destructibles:Array<IDestructible> = [];
+
+destructibles.push(new AsyncThinger());
+destructibles.push(new AsyncThinger());
+destructibles.push(new AsyncThinger());
+destructibles.push(new AsyncThinger());
+
+destructibles.forEach(destructible => destructible.destruct());
+
 ```
 
 
