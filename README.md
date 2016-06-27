@@ -1,8 +1,8 @@
-[![Build Status](https://travis-ci.org/mediamonks/seng-disposable.svg?branch=master)](https://travis-ci.org/MediaMonks/seng-disposable)
-[![Code Climate](https://codeclimate.com/github/MediaMonks/seng-disposable/badges/gpa.svg)](https://codeclimate.com/github/MediaMonks/seng-disposable)
-[![Coverage Status](https://coveralls.io/repos/github/MediaMonks/seng-disposable/badge.svg?branch=master)](https://coveralls.io/github/MediaMonks/seng-disposable?branch=master)
-[![npm version](https://badge.fury.io/js/seng-disposable.svg)](https://www.npmjs.com/package/seng-disposable)
-[![Downloads](https://img.shields.io/npm/dm/seng-disposable.svg)](https://www.npmjs.com/package/seng-disposable)
+[![Travis](https://img.shields.io/travis/mediamonks/seng-disposable.svg?maxAge=2592000)](https://travis-ci.org/mediamonks/seng-disposable)
+[![Code Climate](https://img.shields.io/codeclimate/github/mediamonks/seng-disposable.svg?maxAge=2592000)](https://codeclimate.com/github/mediamonks/seng-disposable)
+[![Coveralls](https://img.shields.io/coveralls/mediamonks/seng-disposable.svg?maxAge=2592000)](https://coveralls.io/github/mediamonks/seng-disposable?branch=master)
+[![npm](https://img.shields.io/npm/v/seng-disposable.svg?maxAge=2592000)](https://www.npmjs.com/package/seng-disposable)
+[![npm](https://img.shields.io/npm/dm/seng-disposable.svg?maxAge=2592000)](https://www.npmjs.com/package/seng-disposable)
 
 # seng-disposable
 
