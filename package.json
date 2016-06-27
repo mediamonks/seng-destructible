@@ -6,7 +6,7 @@
   "typings": "index",
   "scripts": {
     "postinstall": "npm run typings",
-    "prepublish": "npm-run-all validate build",
+    "prepublish": "npm run build-npm",
     "typings": "typings install",
     "test": "npm run typescript-test && karma start config/karma.conf.js --single-run --browsers PhantomJS",
     "validate": "npm-run-all -p validate-webpack lint test -s check-coverage",
@@ -23,7 +23,8 @@
     "doc": "npm-run-all -p typedoc yuidoc",
     "typedoc": "typedoc --out doc/typedoc/ src/",
     "yuidoc": "yuidoc -o doc/yuidoc/ -t ./node_modules/yuidoc-mediamonks-theme -H ./node_modules/yuidoc-mediamonks-theme/helpers/helpers.js src/",
-    "build": "npm-run-all clean compile"
+    "build": "npm-run-all clean compile",
+    "build-npm": "npm-run-all clean test typescript-npm"
   },
   "pre-commit": [
     "validate"
