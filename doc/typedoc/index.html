@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>seng-destructible</title>
+	<title>seng-disposable</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
@@ -23,7 +23,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="index.html" class="title">seng-destructible</a>
+					<a href="index.html" class="title">seng-disposable</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -57,7 +57,7 @@
 					<a href="globals.html">Globals</a>
 				</li>
 			</ul>
-			<h1> seng-destructible</h1>
+			<h1> seng-disposable</h1>
 		</div>
 	</div>
 </header>
@@ -65,16 +65,16 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<p><a href="https://travis-ci.org/MediaMonks/seng-destructible"><img src="https://travis-ci.org/mediamonks/seng-destructible.svg?branch=master" alt="Build Status"></a>
-					<a href="https://codeclimate.com/github/MediaMonks/seng-destructible"><img src="https://codeclimate.com/github/MediaMonks/seng-destructible/badges/gpa.svg" alt="Code Climate"></a>
-					<a href="https://coveralls.io/github/MediaMonks/seng-destructible?branch=master"><img src="https://coveralls.io/repos/github/MediaMonks/seng-destructible/badge.svg?branch=master" alt="Coverage Status"></a>
-					<a href="https://www.npmjs.com/package/seng-destructible"><img src="https://badge.fury.io/js/seng-destructible.svg" alt="npm version"></a>
-				<a href="https://www.npmjs.com/package/seng-destructible"><img src="https://img.shields.io/npm/dm/seng-destructible.svg" alt="Downloads"></a></p>
-				<h1 id="seng-destructible">seng-destructible</h1>
-				<p>seng-destructible provides a basic framework for destructible classes and objects. Destructible is used as a basis for
-				many Seng libraries because it provides a common interface which can be passed around to be destructed at a later time.</p>
+				<p><a href="https://travis-ci.org/MediaMonks/seng-disposable"><img src="https://travis-ci.org/mediamonks/seng-disposable.svg?branch=master" alt="Build Status"></a>
+					<a href="https://codeclimate.com/github/MediaMonks/seng-disposable"><img src="https://codeclimate.com/github/MediaMonks/seng-disposable/badges/gpa.svg" alt="Code Climate"></a>
+					<a href="https://coveralls.io/github/MediaMonks/seng-disposable?branch=master"><img src="https://coveralls.io/repos/github/MediaMonks/seng-disposable/badge.svg?branch=master" alt="Coverage Status"></a>
+					<a href="https://www.npmjs.com/package/seng-disposable"><img src="https://badge.fury.io/js/seng-disposable.svg" alt="npm version"></a>
+				<a href="https://www.npmjs.com/package/seng-disposable"><img src="https://img.shields.io/npm/dm/seng-disposable.svg" alt="Downloads"></a></p>
+				<h1 id="seng-disposable">seng-disposable</h1>
+				<p>seng-disposable provides a basic framework for disposable classes and objects. Disposable is used as a basis for
+				many Seng libraries because it provides a common interface which can be passed around to be disposed at a later time.</p>
 				<h2 id="installation">Installation</h2>
-				<pre><code>npm <span class="hljs-selector-tag">i</span> -S seng-destructible
+				<pre><code>npm <span class="hljs-selector-tag">i</span> -S seng-disposable
 </code></pre><p>Or grab one of the following files from the <code>/dist/</code> folder for manual use:</p>
 				<ul>
 					<li><strong>umd</strong> (bundled with webpack)</li>
@@ -85,44 +85,44 @@
 					<li><strong>es6</strong></li>
 				</ul>
 				<h2 id="usage">Usage</h2>
-				<pre><code><span class="hljs-keyword">import</span> <span class="hljs-type">Destructible</span> from <span class="hljs-symbol">'seng</span>-destructible';
+				<pre><code><span class="hljs-keyword">import</span> <span class="hljs-type">Disposable</span> from <span class="hljs-symbol">'seng</span>-disposable';
 
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AsyncThinger</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Destructible</span> </span>{
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AsyncThinger</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Disposable</span> </span>{
     interval:number;
 
     start() {
         <span class="hljs-keyword">this</span>.interval = setInterval(() =&gt; console.log(<span class="hljs-symbol">'hello</span> world!'));
     }
 
-    destruct() {
+    dispose() {
         <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.interval !== void <span class="hljs-number">0</span>) {
             clearInterval(<span class="hljs-keyword">this</span>.interval);
             <span class="hljs-keyword">this</span>.interval = void <span class="hljs-number">0</span>;
         }
 
-        <span class="hljs-keyword">super</span>.destruct();
+        <span class="hljs-keyword">super</span>.dispose();
     }
 }
 
-<span class="hljs-comment">// since all objects implementing IDestructible provide the same way to destruct it, we can simply create an array</span>
-<span class="hljs-comment">// that contains IDestructible objects, without having to care what they actually are.</span>
-let destructibles:<span class="hljs-type">Array</span>&lt;<span class="hljs-type">IDestructible</span>&gt; = [];
+<span class="hljs-comment">// since all objects implementing IDisposable provide the same way to dispose it, we can simply create an array</span>
+<span class="hljs-comment">// that contains IDisposable objects, without having to care about what they actually are.</span>
+let disposables:<span class="hljs-type">Array</span>&lt;<span class="hljs-type">IDisposable</span>&gt; = [];
 
-destructibles.push(<span class="hljs-keyword">new</span> <span class="hljs-type">AsyncThinger</span>());
-destructibles.push(<span class="hljs-keyword">new</span> <span class="hljs-type">AsyncThinger</span>());
-destructibles.push(<span class="hljs-keyword">new</span> <span class="hljs-type">AsyncThinger</span>());
-destructibles.push(<span class="hljs-keyword">new</span> <span class="hljs-type">AsyncThinger</span>());
+disposables.push(<span class="hljs-keyword">new</span> <span class="hljs-type">AsyncThinger</span>());
+disposables.push(<span class="hljs-keyword">new</span> <span class="hljs-type">AsyncThinger</span>());
+disposables.push(<span class="hljs-keyword">new</span> <span class="hljs-type">AsyncThinger</span>());
+disposables.push(<span class="hljs-keyword">new</span> <span class="hljs-type">AsyncThinger</span>());
 
-destructibles.forEach(destructible =&gt; destructible.destruct());
+disposables.forEach(disposable =&gt; disposable.dispose());
 </code></pre><h2 id="documentation">Documentation</h2>
-				<p>View the <a href="https://rawgit.com/MediaMonks/seng-destructible/master/doc/typedoc/index.html">generated documentation</a>.</p>
+				<p>View the <a href="https://rawgit.com/MediaMonks/seng-disposable/master/doc/typedoc/index.html">generated documentation</a>.</p>
 				<h2 id="building">Building</h2>
-				<p>In order to build seng-destructible, ensure that you have <a href="http://git-scm.com/downloads">Git</a>
+				<p>In order to build seng-disposable, ensure that you have <a href="http://git-scm.com/downloads">Git</a>
 				and <a href="http://nodejs.org/">Node.js</a> installed.</p>
 				<p>Clone a copy of the repo:</p>
-				<pre><code>git <span class="hljs-keyword">clone</span> <span class="hljs-title">https</span>://github.com/MediaMonks/seng-destructible.git
-</code></pre><p>Change to the seng-destructible directory:</p>
-				<pre><code><span class="hljs-built_in">cd</span> seng-destructible
+				<pre><code>git <span class="hljs-keyword">clone</span> <span class="hljs-title">https</span>://github.com/MediaMonks/seng-disposable.git
+</code></pre><p>Change to the seng-disposable directory:</p>
+				<pre><code><span class="hljs-built_in">cd</span> seng-disposable
 </code></pre><p>Install dev dependencies:</p>
 				<pre><code>npm <span class="hljs-keyword">install</span>
 </code></pre><p>Use one of the following main scripts:</p>
@@ -162,10 +162,10 @@ destructibles.forEach(destructible =&gt; destructible.destruct());
 						<span>Externals</span>
 					</li>
 					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/_lib_destructible_.html">"lib/<wbr>Destructible"</a>
+						<a href="modules/_lib_disposable_.html">"lib/<wbr>Disposable"</a>
 					</li>
 					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/_lib_idestructible_.html">"lib/IDestructible"</a>
+						<a href="modules/_lib_idisposable_.html">"lib/IDisposable"</a>
 					</li>
 				</ul>
 			</nav>

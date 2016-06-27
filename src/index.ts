@@ -1,5 +1,5 @@
-import {default as Destructible} from './lib/Destructible';
+import {default as Disposable} from "./lib/Disposable";
 
-export {default as IDestructible} from './lib/IDestructible';
+export {default as IDisposable} from './lib/IDisposable';
 
-export default Destructible;
+export default Disposable;

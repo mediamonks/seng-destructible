@@ -1,4 +1,4 @@
-var SengBoilerplate =
+module.exports =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -53,9 +53,9 @@ var SengBoilerplate =
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Destructible_1 = __webpack_require__(2);
+	var Disposable_1 = __webpack_require__(2);
 	Object.defineProperty(exports, "__esModule", { value: true });
-	exports.default = Destructible_1.default;
+	exports.default = Disposable_1.default;
 
 
 /***/ },
@@ -63,27 +63,27 @@ var SengBoilerplate =
 /***/ function(module, exports) {
 
 	"use strict";
-	var Destructible = (function () {
-	    function Destructible() {
-	        this._isDestructed = false;
+	var Disposable = (function () {
+	    function Disposable() {
+	        this._isDisposed = false;
 	    }
 	    /**
-	     * After {@link destruct} has been called, this method returns true.
-	     * Use this method to determine whether destruct() should be run again.
+	     * After {@link dispose} has been called, this method returns true.
+	     * Use this method to determine whether dispose() should be run again.
 	     */
-	    Destructible.prototype.isDestructed = function () {
-	        return this._isDestructed;
+	    Disposable.prototype.isDisposed = function () {
+	        return this._isDisposed;
 	    };
 	    /**
 	     * Destruct this class.
 	     */
-	    Destructible.prototype.destruct = function () {
-	        this._isDestructed = true;
+	    Disposable.prototype.dispose = function () {
+	        this._isDisposed = true;
 	    };
-	    return Destructible;
+	    return Disposable;
 	}());
 	Object.defineProperty(exports, "__esModule", { value: true });
-	exports.default = Destructible;
+	exports.default = Disposable;
 
 
 /***/ }

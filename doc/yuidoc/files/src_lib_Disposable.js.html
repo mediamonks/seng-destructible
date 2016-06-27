@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>src\lib\Destructible.js</title>
+	<title>src\lib\Disposable.js</title>
 	<link rel="stylesheet" href="">
 	<link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
 
@@ -26,7 +26,7 @@
 		<form class="navbar-form navbar-right">
 			<div class="form-group">
 				<input type="text" class="form-control"  placeholder="Search for classes/modules..."
-				       data-obj='["classes/temple.core.Destructible", "modules/Temple"]'>
+				       data-obj='[]'>
 			</div>
 		</form>
 	</div>
@@ -49,12 +49,10 @@
 			
 				<div class="tab-content" style="border: 1px solid #DDD; border-top:0; padding-top: 10px; ">
 					<div class="tab-pane active" id="classes">
-			<ul class="list-unstyled"><li><strong name="undefined">temple</strong><ul class="list-unstyled"><li><strong name="undefined">core</strong><ul class="list-unstyled"><li>				- <a href="../classes/temple.core.Destructible.html">Destructible</a>
-			</li></ul></li></ul></li></ul>		</div>
+			<ul class="list-unstyled"></ul>		</div>
 			
 					<div class="tab-pane" id="modules">
 						<ul class="list-unordered">
-								<li><a href="../modules/Temple.html">Temple</a></li>
 						</ul>
 					</div>
 				</div>
@@ -87,44 +85,37 @@
 			<div class="apidocs">
 				<div id="docs-main">
 					<div class="content"><div class="page-header">
-    <h1>src\lib\Destructible.js <small>File</small></h1>
+    <h1>src\lib\Disposable.js <small>File</small></h1>
 </div>
 
 <div class="file">
 <pre class="prettyprint linenums">"use strict";
-/**
- * @module Temple
- * @namespace temple.core
- * @class Destructible
- */
-var Destructible = (function () {
-    function Destructible() {
-        this._isDestructed = false;
-    }
-    /**
-     * After {{#crossLink "temple.core.Destructible/destruct"}}{{/crossLink}} has been called, this method returns true.
-     * Use this method to determine whether destruct() should be run again.
-     *
-     * @public
-     * @method isDestructed
-     * @returns {boolean}
-     */
-    Destructible.prototype.isDestructed = function () {
-        return this._isDestructed;
-    };
-    /**
-     * Destruct this class.
-     *
-     * @public
-     * @method destruct
-     */
-    Destructible.prototype.destruct = function () {
-        this._isDestructed = true;
-    };
-    return Destructible;
+var Disposable = (function()
+{
+	function Disposable()
+	{
+		this._isDisposed = false;
+	}
+
+	/**
+	 * After {@link dispose} has been called, this method returns true.
+	 * Use this method to determine whether dispose() should be run again.
+	 */
+	Disposable.prototype.isDisposed = function()
+	{
+		return this._isDisposed;
+	};
+	/**
+	 * Destruct this class.
+	 */
+	Disposable.prototype.dispose = function()
+	{
+		this._isDisposed = true;
+	};
+	return Disposable;
 }());
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = Destructible;
+Object.defineProperty( exports, "__esModule", {value: true} );
+exports.default = Disposable;
 </pre>
 </div>
 </div>

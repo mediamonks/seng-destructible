@@ -1,19 +1,19 @@
-[![Build Status](https://travis-ci.org/mediamonks/seng-destructible.svg?branch=master)](https://travis-ci.org/MediaMonks/seng-destructible)
-[![Code Climate](https://codeclimate.com/github/MediaMonks/seng-destructible/badges/gpa.svg)](https://codeclimate.com/github/MediaMonks/seng-destructible)
-[![Coverage Status](https://coveralls.io/repos/github/MediaMonks/seng-destructible/badge.svg?branch=master)](https://coveralls.io/github/MediaMonks/seng-destructible?branch=master)
-[![npm version](https://badge.fury.io/js/seng-destructible.svg)](https://www.npmjs.com/package/seng-destructible)
-[![Downloads](https://img.shields.io/npm/dm/seng-destructible.svg)](https://www.npmjs.com/package/seng-destructible)
+[![Build Status](https://travis-ci.org/mediamonks/seng-disposable.svg?branch=master)](https://travis-ci.org/MediaMonks/seng-disposable)
+[![Code Climate](https://codeclimate.com/github/MediaMonks/seng-disposable/badges/gpa.svg)](https://codeclimate.com/github/MediaMonks/seng-disposable)
+[![Coverage Status](https://coveralls.io/repos/github/MediaMonks/seng-disposable/badge.svg?branch=master)](https://coveralls.io/github/MediaMonks/seng-disposable?branch=master)
+[![npm version](https://badge.fury.io/js/seng-disposable.svg)](https://www.npmjs.com/package/seng-disposable)
+[![Downloads](https://img.shields.io/npm/dm/seng-disposable.svg)](https://www.npmjs.com/package/seng-disposable)
 
-# seng-destructible
+# seng-disposable
 
-seng-destructible provides a basic framework for destructible classes and objects. Destructible is used as a basis for
-many Seng libraries because it provides a common interface which can be passed around to be destructed at a later time.
+seng-disposable provides a basic framework for disposable classes and objects. Disposable is used as a basis for
+many Seng libraries because it provides a common interface which can be passed around to be disposed at a later time.
 
 
 ## Installation
 
 ```
-npm i -S seng-destructible
+npm i -S seng-disposable
 ```
 
 Or grab one of the following files from the `/dist/` folder for manual use:
@@ -28,57 +28,57 @@ Or grab one of the following files from the `/dist/` folder for manual use:
 ## Usage
 
 ```
-import Destructible from 'seng-destructible';
+import Disposable from 'seng-disposable';
 
-class AsyncThinger extends Destructible {
+class AsyncThinger extends Disposable {
 	interval:number;
 
 	start() {
 		this.interval = setInterval(() => console.log('hello world!'));
 	}
 	
-	destruct() {
+	dispose() {
 		if (this.interval !== void 0) {
 			clearInterval(this.interval);
 			this.interval = void 0;
 		}
 		
-		super.destruct();
+		super.dispose();
 	}
 }
 
-// since all objects implementing IDestructible provide the same way to destruct it, we can simply create an array
-// that contains IDestructible objects, without having to care what they actually are.
-let destructibles:Array<IDestructible> = [];
+// since all objects implementing IDisposable provide the same way to dispose it, we can simply create an array
+// that contains IDisposable objects, without having to care about what they actually are.
+let disposables:Array<IDisposable> = [];
 
-destructibles.push(new AsyncThinger());
-destructibles.push(new AsyncThinger());
-destructibles.push(new AsyncThinger());
-destructibles.push(new AsyncThinger());
+disposables.push(new AsyncThinger());
+disposables.push(new AsyncThinger());
+disposables.push(new AsyncThinger());
+disposables.push(new AsyncThinger());
 
-destructibles.forEach(destructible => destructible.destruct());
+disposables.forEach(disposable => disposable.dispose());
 
 ```
 
 
 ## Documentation
 
-View the [generated documentation](https://rawgit.com/MediaMonks/seng-destructible/master/doc/typedoc/index.html).
+View the [generated documentation](https://rawgit.com/MediaMonks/seng-disposable/master/doc/typedoc/index.html).
 
 
 ## Building
 
-In order to build seng-destructible, ensure that you have [Git](http://git-scm.com/downloads)
+In order to build seng-disposable, ensure that you have [Git](http://git-scm.com/downloads)
 and [Node.js](http://nodejs.org/) installed.
 
 Clone a copy of the repo:
 ```
-git clone https://github.com/MediaMonks/seng-destructible.git
+git clone https://github.com/MediaMonks/seng-disposable.git
 ```
 
-Change to the seng-destructible directory:
+Change to the seng-disposable directory:
 ```
-cd seng-destructible
+cd seng-disposable
 ```
 
 Install dev dependencies:

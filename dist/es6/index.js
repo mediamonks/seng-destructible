@@ -1,2 +1,2 @@
-import { default as Destructible } from './lib/Destructible';
-export default Destructible;
+import { default as Disposable } from './lib/Disposable';
+export default Disposable;

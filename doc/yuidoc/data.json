@@ -1,87 +1,39 @@
 {
     "project": {},
     "files": {
-        "src\\lib\\Destructible.js": {
-            "name": "src\\lib\\Destructible.js",
-            "modules": {
-                "Temple": 1
-            },
-            "classes": {
-                "temple.core.Destructible": 1
-            },
+        "src\\lib\\Disposable.js": {
+            "name": "src\\lib\\Disposable.js",
+            "modules": {},
+            "classes": {},
             "fors": {},
-            "namespaces": {
-                "temple.core": 1
-            }
+            "namespaces": {}
         }
     },
-    "modules": {
-        "Temple": {
-            "name": "Temple",
-            "submodules": {},
-            "elements": {},
-            "classes": {
-                "temple.core.Destructible": 1
-            },
-            "fors": {},
-            "namespaces": {
-                "temple.core": 1
-            },
-            "tag": "module",
-            "file": "src\\lib\\Destructible.js",
-            "line": 2
-        }
-    },
-    "classes": {
-        "temple.core.Destructible": {
-            "name": "temple.core.Destructible",
-            "shortname": "temple.core.Destructible",
-            "classitems": [],
-            "plugins": [],
-            "extensions": [],
-            "plugin_for": [],
-            "extension_for": [],
-            "module": "Temple",
-            "namespace": "temple.core",
-            "file": "src\\lib\\Destructible.js",
-            "line": 2
-        }
-    },
+    "modules": {},
+    "classes": {},
     "elements": {},
     "classitems": [
         {
-            "file": "src\\lib\\Destructible.js",
-            "line": 11,
-            "description": "After {{#crossLink \"temple.core.Destructible/destruct\"}}{{/crossLink}} has been called, this method returns true.\nUse this method to determine whether destruct() should be run again.",
-            "access": "public",
-            "tagname": "",
-            "itemtype": "method",
-            "name": "isDestructed",
-            "return": {
-                "description": "",
-                "type": "Boolean"
-            },
-            "class": "temple.core.Destructible",
-            "module": "Temple",
-            "namespace": "temple.core"
+            "file": "src\\lib\\Disposable.js",
+            "line": 9,
+            "description": "After {@link dispose} has been called, this method returns true.\nUse this method to determine whether dispose() should be run again.",
+            "class": ""
         },
         {
-            "file": "src\\lib\\Destructible.js",
-            "line": 22,
+            "file": "src\\lib\\Disposable.js",
+            "line": 17,
             "description": "Destruct this class.",
-            "access": "public",
-            "tagname": "",
-            "itemtype": "method",
-            "name": "destruct",
-            "class": "temple.core.Destructible",
-            "module": "Temple",
-            "namespace": "temple.core"
+            "class": ""
         }
     ],
     "warnings": [
         {
-            "message": "replacing incorrect tag: returns with return",
-            "line": " src\\lib\\Destructible.js:11"
+            "message": "Missing item type\nAfter {@link dispose} has been called, this method returns true.\nUse this method to determine whether dispose() should be run again.",
+            "line": " src\\lib\\Disposable.js:9"
+        },
+        {
+            "message": "Missing item type\nDestruct this class.",
+            "line": " src\\lib\\Disposable.js:17"
         }
     ]
 }
