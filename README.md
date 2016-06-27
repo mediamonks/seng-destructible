@@ -12,7 +12,7 @@ many Seng libraries because it provides a common interface which can be passed a
 
 ## Installation
 
-```
+```sh
 npm i -S seng-disposable
 ```
 
@@ -27,7 +27,7 @@ Or grab one of the following files from the `/dist/` folder for manual use:
 
 ## Usage
 
-```
+```ts
 import Disposable from 'seng-disposable';
 
 class AsyncThinger extends Disposable {
@@ -72,22 +72,22 @@ In order to build seng-disposable, ensure that you have [Git](http://git-scm.com
 and [Node.js](http://nodejs.org/) installed.
 
 Clone a copy of the repo:
-```
+```sh
 git clone https://github.com/MediaMonks/seng-disposable.git
 ```
 
 Change to the seng-disposable directory:
-```
+```sh
 cd seng-disposable
 ```
 
 Install dev dependencies:
-```
+```sh
 npm install
 ```
 
 Use one of the following main scripts:
-```
+```sh
 npm run build   		# build this project (done on install)
 npm run typings			# install .d.ts dependencies (done on install)
 npm test    			# run the tests

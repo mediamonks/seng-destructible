@@ -65,17 +65,18 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<p><a href="https://travis-ci.org/MediaMonks/seng-disposable"><img src="https://travis-ci.org/mediamonks/seng-disposable.svg?branch=master" alt="Build Status"></a>
-					<a href="https://codeclimate.com/github/MediaMonks/seng-disposable"><img src="https://codeclimate.com/github/MediaMonks/seng-disposable/badges/gpa.svg" alt="Code Climate"></a>
-					<a href="https://coveralls.io/github/MediaMonks/seng-disposable?branch=master"><img src="https://coveralls.io/repos/github/MediaMonks/seng-disposable/badge.svg?branch=master" alt="Coverage Status"></a>
-					<a href="https://www.npmjs.com/package/seng-disposable"><img src="https://badge.fury.io/js/seng-disposable.svg" alt="npm version"></a>
-				<a href="https://www.npmjs.com/package/seng-disposable"><img src="https://img.shields.io/npm/dm/seng-disposable.svg" alt="Downloads"></a></p>
+				<p><a href="https://travis-ci.org/mediamonks/seng-disposable"><img src="https://img.shields.io/travis/mediamonks/seng-disposable.svg?maxAge=2592000" alt="Travis"></a>
+					<a href="https://codeclimate.com/github/mediamonks/seng-disposable"><img src="https://img.shields.io/codeclimate/github/mediamonks/seng-disposable.svg?maxAge=2592000" alt="Code Climate"></a>
+					<a href="https://coveralls.io/github/mediamonks/seng-disposable?branch=master"><img src="https://img.shields.io/coveralls/mediamonks/seng-disposable.svg?maxAge=2592000" alt="Coveralls"></a>
+					<a href="https://www.npmjs.com/package/seng-disposable"><img src="https://img.shields.io/npm/v/seng-disposable.svg?maxAge=2592000" alt="npm"></a>
+				<a href="https://www.npmjs.com/package/seng-disposable"><img src="https://img.shields.io/npm/dm/seng-disposable.svg?maxAge=2592000" alt="npm"></a></p>
 				<h1 id="seng-disposable">seng-disposable</h1>
 				<p>seng-disposable provides a basic framework for disposable classes and objects. Disposable is used as a basis for
 				many Seng libraries because it provides a common interface which can be passed around to be disposed at a later time.</p>
 				<h2 id="installation">Installation</h2>
-				<pre><code>npm <span class="hljs-selector-tag">i</span> -S seng-disposable
-</code></pre><p>Or grab one of the following files from the <code>/dist/</code> folder for manual use:</p>
+				<pre><code class="lang-sh">npm i -S seng-disposable
+</code></pre>
+				<p>Or grab one of the following files from the <code>/dist/</code> folder for manual use:</p>
 				<ul>
 					<li><strong>umd</strong> (bundled with webpack)</li>
 					<li><strong>amd</strong> (bundled with webpack)</li>
@@ -85,19 +86,19 @@
 					<li><strong>es6</strong></li>
 				</ul>
 				<h2 id="usage">Usage</h2>
-				<pre><code><span class="hljs-keyword">import</span> <span class="hljs-type">Disposable</span> from <span class="hljs-symbol">'seng</span>-disposable';
+				<pre><code class="lang-ts"><span class="hljs-keyword">import</span> Disposable from <span class="hljs-string">'seng-disposable'</span>;
 
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AsyncThinger</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Disposable</span> </span>{
-    interval:number;
+<span class="hljs-keyword">class</span> AsyncThinger extends Disposable {
+    interval:<span class="hljs-built_in">number</span>;
 
     start() {
-        <span class="hljs-keyword">this</span>.interval = setInterval(() =&gt; console.log(<span class="hljs-symbol">'hello</span> world!'));
+        <span class="hljs-keyword">this</span>.interval = setInterval(() =&gt; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'hello world!'</span>));
     }
 
     dispose() {
-        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.interval !== void <span class="hljs-number">0</span>) {
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.interval !== <span class="hljs-built_in">void</span> <span class="hljs-number">0</span>) {
             clearInterval(<span class="hljs-keyword">this</span>.interval);
-            <span class="hljs-keyword">this</span>.interval = void <span class="hljs-number">0</span>;
+            <span class="hljs-keyword">this</span>.interval = <span class="hljs-built_in">void</span> <span class="hljs-number">0</span>;
         }
 
         <span class="hljs-keyword">super</span>.dispose();
@@ -106,34 +107,39 @@
 
 <span class="hljs-comment">// since all objects implementing IDisposable provide the same way to dispose it, we can simply create an array</span>
 <span class="hljs-comment">// that contains IDisposable objects, without having to care about what they actually are.</span>
-let disposables:<span class="hljs-type">Array</span>&lt;<span class="hljs-type">IDisposable</span>&gt; = [];
+<span class="hljs-keyword">let</span> disposables:<span class="hljs-built_in">Array</span>&lt;IDisposable&gt; = [];
 
-disposables.push(<span class="hljs-keyword">new</span> <span class="hljs-type">AsyncThinger</span>());
-disposables.push(<span class="hljs-keyword">new</span> <span class="hljs-type">AsyncThinger</span>());
-disposables.push(<span class="hljs-keyword">new</span> <span class="hljs-type">AsyncThinger</span>());
-disposables.push(<span class="hljs-keyword">new</span> <span class="hljs-type">AsyncThinger</span>());
+disposables.push(<span class="hljs-keyword">new</span> AsyncThinger());
+disposables.push(<span class="hljs-keyword">new</span> AsyncThinger());
+disposables.push(<span class="hljs-keyword">new</span> AsyncThinger());
+disposables.push(<span class="hljs-keyword">new</span> AsyncThinger());
 
 disposables.forEach(disposable =&gt; disposable.dispose());
-</code></pre><h2 id="documentation">Documentation</h2>
+</code></pre>
+				<h2 id="documentation">Documentation</h2>
 				<p>View the <a href="https://rawgit.com/MediaMonks/seng-disposable/master/doc/typedoc/index.html">generated documentation</a>.</p>
 				<h2 id="building">Building</h2>
 				<p>In order to build seng-disposable, ensure that you have <a href="http://git-scm.com/downloads">Git</a>
 				and <a href="http://nodejs.org/">Node.js</a> installed.</p>
 				<p>Clone a copy of the repo:</p>
-				<pre><code>git <span class="hljs-keyword">clone</span> <span class="hljs-title">https</span>://github.com/MediaMonks/seng-disposable.git
-</code></pre><p>Change to the seng-disposable directory:</p>
-				<pre><code><span class="hljs-built_in">cd</span> seng-disposable
-</code></pre><p>Install dev dependencies:</p>
-				<pre><code>npm <span class="hljs-keyword">install</span>
-</code></pre><p>Use one of the following main scripts:</p>
-				<pre><code><span class="hljs-built_in">npm</span> run build           <span class="hljs-comment"># build this project (done on install)</span>
-<span class="hljs-built_in">npm</span> run typings            <span class="hljs-comment"># install .d.ts dependencies (done on install)</span>
-<span class="hljs-built_in">npm</span> test                <span class="hljs-comment"># run the tests</span>
-<span class="hljs-built_in">npm</span> validate            <span class="hljs-comment"># runs validation scripts, including test, lint and doc</span>
-<span class="hljs-built_in">npm</span> run lint            <span class="hljs-comment"># run tslint on this project</span>
-<span class="hljs-built_in">npm</span> run doc                <span class="hljs-comment"># generate typedoc and yuidoc documentation</span>
-<span class="hljs-built_in">npm</span> run typescript-<span class="hljs-built_in">npm</span>    <span class="hljs-comment"># just compile the typescript output used in the npm module</span>
-</code></pre><p>When installing this module, it adds a pre-commit hook, that runs the <code>validate</code>
+				<pre><code class="lang-sh">git <span class="hljs-built_in">clone</span> https://github.com/MediaMonks/seng-disposable.git
+</code></pre>
+				<p>Change to the seng-disposable directory:</p>
+				<pre><code class="lang-sh"><span class="hljs-built_in">cd</span> seng-disposable
+</code></pre>
+				<p>Install dev dependencies:</p>
+				<pre><code class="lang-sh">npm install
+</code></pre>
+				<p>Use one of the following main scripts:</p>
+				<pre><code class="lang-sh">npm run build           <span class="hljs-comment"># build this project (done on install)</span>
+npm run typings            <span class="hljs-comment"># install .d.ts dependencies (done on install)</span>
+npm <span class="hljs-built_in">test</span>                <span class="hljs-comment"># run the tests</span>
+npm validate            <span class="hljs-comment"># runs validation scripts, including test, lint and doc</span>
+npm run lint            <span class="hljs-comment"># run tslint on this project</span>
+npm run doc                <span class="hljs-comment"># generate typedoc and yuidoc documentation</span>
+npm run typescript-npm    <span class="hljs-comment"># just compile the typescript output used in the npm module</span>
+</code></pre>
+				<p>When installing this module, it adds a pre-commit hook, that runs the <code>validate</code>
 					and <code>build</code> scripts before committing, so you can be sure that everything
 				checks out and all files that should be committed are generated.</p>
 				<h2 id="contribute">Contribute</h2>
