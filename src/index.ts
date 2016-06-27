@@ -1,5 +1,5 @@
-import {default as Disposable} from "./lib/Disposable";
+import {default as _export} from "./lib/Disposable";
 
 export {default as IDisposable} from './lib/IDisposable';
 
-export default Disposable;
+export default _export;

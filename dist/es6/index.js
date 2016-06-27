@@ -1,2 +1,2 @@
-import { default as Disposable } from "./lib/Disposable";
-export default Disposable;
+import { default as _export } from "./lib/Disposable";
+export default _export;
