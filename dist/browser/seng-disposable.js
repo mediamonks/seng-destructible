@@ -1,4 +1,4 @@
-var SengBoilerplate =
+var SengDisposable =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};

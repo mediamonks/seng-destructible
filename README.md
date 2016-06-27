@@ -21,7 +21,7 @@ Or grab one of the following files from the `/dist/` folder for manual use:
 - **umd** (bundled with webpack)
 - **amd** (bundled with webpack)
 - **commonjs2** (bundled with webpack, but why don't you use npm?)
-- **browser** (bundled with webpack, available as `window.SengBoilerplate`)
+- **browser** (bundled with webpack, available as `window.SengDisposable`)
 - **system**
 - **es6**
 

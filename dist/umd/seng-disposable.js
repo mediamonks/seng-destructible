@@ -4,9 +4,9 @@
 	else if(typeof define === 'function' && define.amd)
 		define([], factory);
 	else if(typeof exports === 'object')
-		exports["SengBoilerplate"] = factory();
+		exports["SengDisposable"] = factory();
 	else
-		root["SengBoilerplate"] = factory();
+		root["SengDisposable"] = factory();
 })(this, function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
