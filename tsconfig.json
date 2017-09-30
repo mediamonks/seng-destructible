@@ -1,17 +1,31 @@
 {
   "compilerOptions": {
-    "target": "es5",
     "module": "commonjs",
-    "noImplicitAny": true,
-    "suppressImplicitAnyIndexErrors": true,
-    "removeComments": false,
-    "preserveConstEnums": true,
-    "sourceMap": false,
+    "moduleResolution": "node",
+    "target": "es5",
+    "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "outDir": "./"
+    "preserveConstEnums": true,
+    "noImplicitAny": false,
+    "removeComments": false,
+    "sourceMap": false,
+    "inlineSourceMap": false,
+    "forceConsistentCasingInFileNames": true,
+    "importHelpers": true,
+    "strictNullChecks": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "outDir": "./npm",
+    "typeRoots": [
+      "./node_modules/@types"
+    ]
   },
-  "files": [
-    "./typings/index.d.ts",
-    "./src/index.ts"
+  "include": [
+    "./src/**/*"
+  ],
+  "exclude": [
+    "./src/bundle.ts"
   ]
 }
