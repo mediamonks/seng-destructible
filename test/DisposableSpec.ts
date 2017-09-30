@@ -6,7 +6,6 @@ describe('DisposableSpec', () => {
 	let disposable:Disposable;
 
 	beforeEach(() => {
-		console.log(new Disposable());
 		disposable = new Disposable();
 	});
 
