@@ -57,7 +57,7 @@
   "pre-push": [
     "validate"
   ],
-  "author": "Stuart van Beek <arjan@mediamonks.com> (https://github.com/art0rz)",
+  "author": "Stuart van Beek <stuart@mediamonks.com> (https://github.com/art0rz)",
   "homepage": "https://www.mediamonks.com/",
   "license": "MIT",
   "keywords": [
