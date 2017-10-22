@@ -1,6 +1,6 @@
 {
   "name": "seng-disposable",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "Disposable provides a common interface for disposing of objects",
   "main": "index.js",
   "scripts": {
