@@ -1,20 +1,35 @@
 import Disposable from '../src/lib/Disposable';
-import { expect } from 'chai';
-import {} from 'mocha';
+import { expect, use as chaiUse } from 'chai';
+import { spy } from 'sinon';
+import sinonChai from 'sinon-chai';
+
+chaiUse(sinonChai);
 
 describe('DisposableSpec', () => {
-	let disposable:Disposable;
+  it('isDisposed should return false when instance has not been disposed', () => {
+    const disposable = new Disposable();
+    expect(disposable.isDisposed()).equals(false);
+  });
 
-	beforeEach(() => {
-		disposable = new Disposable();
-	});
+  it('isDisposed should return true when instance has been disposed', () => {
+    const disposable = new Disposable();
+    disposable.dispose();
+    expect(disposable.isDisposed()).equals(true);
+  });
 
-	it('isDisposed should return false when instance has not been disposed', () => {
-		expect(disposable.isDisposed()).equals(false);
-	});
+  it('dispose() should not be executed multiple times', () => {
+    const disposeSpy = spy();
 
-	it('isDisposed should return true when instance has been disposed', () => {
-		disposable.dispose();
-		expect(disposable.isDisposed()).equals(true);
-	});
+    class TestDispose extends Disposable {
+      public dispose():void {
+        disposeSpy();
+        super.dispose();
+      }
+    }
+
+    const disposable = new TestDispose();
+    disposable.dispose();
+    disposable.dispose();
+    expect(disposeSpy).to.have.been.calledOnce;
+  });
 });
