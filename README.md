@@ -1,121 +1,52 @@
-[![Travis](https://img.shields.io/travis/mediamonks/seng-disposable.svg?maxAge=2592000)](https://travis-ci.org/mediamonks/seng-disposable)
-[![Code Climate](https://img.shields.io/codeclimate/github/mediamonks/seng-disposable.svg?maxAge=2592000)](https://codeclimate.com/github/mediamonks/seng-disposable)
-[![Coveralls](https://img.shields.io/coveralls/mediamonks/seng-disposable.svg?maxAge=2592000)](https://coveralls.io/github/mediamonks/seng-disposable?branch=master)
-[![npm](https://img.shields.io/npm/v/seng-disposable.svg?maxAge=2592000)](https://www.npmjs.com/package/seng-disposable)
-[![npm](https://img.shields.io/npm/dm/seng-disposable.svg?maxAge=2592000)](https://www.npmjs.com/package/seng-disposable)
+# seng-boilerplate
 
-# seng-disposable
+Add a description here...
 
-seng-disposable provides a basic framework for disposable classes and objects. Disposable is used as a basis for
-many Seng libraries because it provides a common interface which can be passed around to be disposed at a later time.
-
+[![Travis](https://img.shields.io/travis/mediamonks/seng-boilerplate.svg?maxAge=2592000)](https://travis-ci.org/mediamonks/seng-boilerplate)
+[![Code Climate](https://img.shields.io/codeclimate/github/mediamonks/seng-boilerplate.svg?maxAge=2592000)](https://codeclimate.com/github/mediamonks/seng-boilerplate)
+[![Coveralls](https://img.shields.io/coveralls/mediamonks/seng-boilerplate.svg?maxAge=2592000)](https://coveralls.io/github/mediamonks/seng-boilerplate?branch=master)
+[![npm](https://img.shields.io/npm/v/seng-boilerplate.svg?maxAge=2592000)](https://www.npmjs.com/package/seng-boilerplate)
+[![npm](https://img.shields.io/npm/dm/seng-boilerplate.svg?maxAge=2592000)](https://www.npmjs.com/package/seng-boilerplate)
 
 ## Installation
 
-### yarn / npm
-
 ```sh
-yarn add seng-disposable
+yarn add seng-boilerplate
 ```
 
 ```sh
-npm i -S seng-disposable
+npm i -S seng-boilerplate
 ```
 
-### other
 
-We also have browser, amd, commonjs, umd, systemjs and es6 versions of
-this module available attached to the [Github Releases](https://github.com/mediamonks/seng-disposable/releases).
-
-<!---
-
-Note: The below cannot be used yet, as there is no way to link to a
-specific version yet without updating this readme manually after each
-new version.
-
-
-### browser
-
-```html
-<script src="http://mediamonks-development.s3.amazonaws.com/seng/libs/seng-disposable/1.2.0/seng-disposable.min.js"></script>
-```
-```js
-console.log(window.SengDisposable)
-```
-
-### other
-
-Besides the browser version, there are other versions available for
-download as well:
-
-- [browser](http://mediamonks-development.s3.amazonaws.com/seng/libs/seng-disposable/1.2.0/seng-disposable.js) (and [minified](http://mediamonks-development.s3.amazonaws.com/seng/libs/seng-disposable/1.2.0/seng-disposable.min.js))
-- [umd](http://mediamonks-development.s3.amazonaws.com/seng/libs/seng-disposable/1.2.0/seng-disposable.js) (and [minified](http://mediamonks-development.s3.amazonaws.com/seng/libs/seng-disposable/1.2.0/seng-disposable-umd.min.js))
-- [amd](http://mediamonks-development.s3.amazonaws.com/seng/libs/seng-disposable/1.2.0/seng-disposable-amd.js)
-- [commonjs](http://mediamonks-development.s3.amazonaws.com/seng/libs/seng-disposable/1.2.0/seng-disposable-commonjs.js)
-- [systemjs](http://mediamonks-development.s3.amazonaws.com/seng/libs/seng-disposable/1.2.0/seng-disposable-system.js)
-- [es6](http://mediamonks-development.s3.amazonaws.com/seng/libs/seng-disposable/1.2.0/seng-disposable-es6.zip)
-
--->
-
-### manual
-
-Check the **build** section below to see your you can build for all the
-targets yourself.
-
-## Usage
+## Basic Usage
 
 ```ts
-import Disposable from 'seng-disposable';
+import SengBoilerplate from 'seng-boilerplate';
+// import SengBoilerplate from 'seng-boilerplate/lib/classname';
 
-class AsyncThinger extends Disposable {
-	interval:number;
-
-	start() {
-		this.interval = setInterval(() => console.log('hello world!'));
-	}
-	
-	dispose() {
-		if (this.interval !== void 0) {
-			clearInterval(this.interval);
-			this.interval = void 0;
-		}
-		
-		super.dispose();
-	}
-}
-
-// since all objects implementing IDisposable provide the same way to dispose it, we can simply create an array
-// that contains IDisposable objects, without having to care about what they actually are.
-let disposables:Array<IDisposable> = [];
-
-disposables.push(new AsyncThinger());
-disposables.push(new AsyncThinger());
-disposables.push(new AsyncThinger());
-disposables.push(new AsyncThinger());
-
-disposables.forEach(disposable => disposable.dispose());
-
+// do something with SengBoilerplate
 ```
 
 
 ## Documentation
 
-View the [generated documentation](http://mediamonks.github.io/seng-disposable/).
+View the [generated documentation](http://mediamonks.github.io/seng-boilerplate/).
 
 
 ## Building
 
-In order to build seng-disposable, ensure that you have [Git](http://git-scm.com/downloads)
+In order to build seng-boilerplate, ensure that you have [Git](http://git-scm.com/downloads)
 and [Node.js](http://nodejs.org/) installed.
 
 Clone a copy of the repo:
 ```sh
-git clone https://github.com/mediamonks/seng-disposable.git
+git clone https://github.com/mediamonks/seng-boilerplate.git
 ```
 
-Change to the seng-disposable directory:
+Change to the seng-boilerplate directory:
 ```sh
-cd seng-disposable
+cd seng-boilerplate
 ```
 
 Install dev dependencies:
@@ -125,37 +56,17 @@ yarn
 
 Use one of the following main scripts:
 ```sh
-yarn build           # build this project
-yarn dev             # run dev-watch mode, serving example/index.html in the browser
-yarn generate        # generate all artifacts (compiles ts, webpack, docs and coverage)
-yarn typings         # install .d.ts dependencies (done on install)
-yarn test:unit       # run the unit tests
-yarn validate        # runs validation scripts, including test, lint and coverage check
-yarn lint            # run tslint on this project
-yarn doc             # generate typedoc documentation
+yarn build            # build this project
+yarn dev              # run compilers in watch mode, both for babel and typescript
+yarn test             # run the unit tests incl coverage
+yarn test:dev         # run the unit tests in watch mode
+yarn lint             # run eslint and tslint on this project
+yarn doc              # generate typedoc documentation
 ```
 
-When installing this module, it adds a pre-push hook, that runs the `validate`
-script before committing, so you can be sure that everything checks out.
+When installing this module, it adds a pre-commit hook, that runs lint and prettier commands
+before committing, so you can be sure that everything checks out.
 
-If you want to create the distribution files yourself, you can run the
-`build-dist` script, and the following files will get generated in the
-`dist` folder:
-
-- **/dist/seng-disposable.js**: bundled with webpack, can be loaded from
-	a script tag, available as `window.SengDisposable`
-- **/dist/seng-disposable.min.js**: same as above, but minified
-- **/dist/seng-disposable-amd.js**: bundled with webpack, can be used
-	with e.g. requirejs
-- **/dist/seng-disposable-commonjs.js**: bundled with webpack, can be
-	used in systems that support commonjs, but you should just use npm
-- **/dist/seng-disposable-umd.js**: bundled with webpack, works in the
-	browser, with requirejs, and in a commonjs system
-- **/dist/seng-disposable-umd.min.js**: same as above, but minified
-- **/dist/seng-disposable-system.js**: bundled with typescript, can be
-	used in systems	that support systemjs
-- **/dist/seng-disposable-es6.zip**: transpiled with typescript, only
-	types are removed from the source files
 
 ## Contribute
 
@@ -175,3 +86,107 @@ View [AUTHORS.md](./AUTHORS.md)
 ## LICENSE
 
 [MIT](./LICENSE) © MediaMonks
+
+
+## About this boilerplate
+
+**Remove this section when cloning this boilerplate to a real project!**
+
+### Folders
+
+This boilerplate contains the following folders:
+* **/coverage** - Contains the generated test code coverage, is sent to Code
+Climate and Coveral.io.
+* **/docs** - Contains the generated documentation by typedoc.
+* **/lib** - Contains the built code from `src/lib`, will be published to npm.
+* **/node_modules** - Contains the node modules generated by running `yarn`.
+* **/src** - Contains the source code.
+* **/test** - Contains the tests.
+* **/vendor** - Can contain 3rd party code used in this project, when not
+available on npm.
+
+### Files
+
+This boilerplate contains the following files:
+* **.babelrc** - Contains babel configuration.
+* **.codeclimate.yml** - The Code Climate configuration for this project.
+* **.editorconfig** - Defines general formatting rules.
+* **.eslintignore** - Lists patterns that should be ignored when running eslint.
+* **.eslintrc.js** - Contains eslint configuration.
+* **.gitignore** - These files should not end up in git.
+* **.npmignore** - These files should not end up in npm.
+* **.nvmrc** - Contains nodejs version to build this project with.
+* **.nycrc** - Contains nyc code coverage configuration.
+* **.prettierignore** - Lists patterns that should be ignored when running prettier.
+* **.prettierrc** - Contains prettier formatting configuration.
+* **.travis.yml** - Configuration for Travis CI.
+* **AUTHORS.md** - Contains a list of all the authors that worked on this module.
+* **CONTRIBUTING.md** - Contains information on how to contribute on this project.
+* **index.d.ts** - The built Typescript definitions, referenced in the package.json.
+Will be published to npm.
+* **index.d.ts** - The built Typescript index, referenced in the package.json.
+Will be published to npm.
+* **LICENSE** - Our license file.
+* **package.json** - To list the npm package information, all the dependencies,
+and contains all the scripts that can be run.
+* **README.MD** - This file, remove the about section when cloning this boilerplate.
+* **tsconfig.build.json** - The TypeScript configuration file for building definitions.
+* **tsconfig.json** - The TypeScript configuration file for this project.
+* **tslint.json** - The linting rules for our TypeScript code.
+* **yarn.lock** - Yarn lockfile to freeze module versions.
+
+### Travis
+
+This project uses [Travis](https://travis-ci.org) to build, test and
+publish its code to npm. Travis is free for public Github repositories.
+
+It runs on all commits, shows the build status for pull requests, and
+publishes to npm when a new tag/release is created.
+
+Travis only runs the `npm test` script, so have configured that script
+to run everything we want Travis to check. Besides the unit tests, we
+also run our validations and linters.
+
+The travis configuration is placed in a `.travis.yml` file, consisting
+of multiple sections.
+
+1.  Defines the `node_js` [language](https://docs.travis-ci.com/user/languages/javascript-with-nodejs),
+    and tells travis on which node versions to run the process.
+2.  Before running, it needs to install some global dependencies, and
+    when it processes some coverage results.
+3.  It can do a [npm deploy](https://docs.travis-ci.com/user/deployment/npm),
+    telling it to keep the generated artifacts and only publish when run
+    on node 8 and when a tag was committed. It also contains the email
+    address and api key of the npm user.
+4.  Code Climate has a [travis plugin](https://docs.travis-ci.com/user/code-climate/)
+    that automatically uploads the code coverage results.
+
+Because we want to keep the npm api key secret, we add the token to the Travis Repo settings
+where it will be stored secure:
+https://docs.travis-ci.com/user/environment-variables/#Defining-Variables-in-Repository-Settings
+
+Before we can do this, we must make sure that the repository is added
+to Travis, because Travis needs the repository owner/name info to make
+sure the encrypted values only work for that repository.
+
+1.  Then make sure you are logged in to your npm account with the
+    [adduser](https://docs.npmjs.com/cli/adduser) command:
+
+    ```sh
+    $ npm adduser
+    ```
+
+    To verify that you are logged in correctly you can check:
+
+    ```sh
+    $ npm whoami
+    ```
+
+3.  Now we need to [create a new token](https://docs.npmjs.com/getting-started/working_with_tokens):
+
+    ```sh
+    npm token create
+    ```
+    
+    Copy the token value from the output to the Travis Environment Variable settings, and
+    add it with the name `NPM_TOKEN`.
